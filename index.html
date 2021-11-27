@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Title</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    </head>
+    
+    <body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Permanent+Marker&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+main{
+    position:relative;
+    top:0;
+    left:0;
+    background:green;
+    height:100vh;
+    width:100vw;
+    background-image: linear-gradient(45deg, rgba(106, 140, 231,0.2) 0%, rgba(106, 140, 231,0.2) 14.286%,rgba(90, 125, 212,0.2) 14.286%, rgba(90, 125, 212,0.2) 28.572%,rgba(42, 81, 156,0.2) 28.572%, rgba(42, 81, 156,0.2) 42.858%,rgba(26, 67, 138,0.2) 42.858%, rgba(26, 67, 138,0.2) 57.144%,rgba(10, 52, 119,0.2) 57.144%, rgba(10, 52, 119,0.2) 71.43%,rgba(74, 111, 194,0.2) 71.43%, rgba(74, 111, 194,0.2) 85.716%,rgba(58, 96, 175,0.2) 85.716%, rgba(58, 96, 175,0.2) 100.002%),linear-gradient(45deg, rgba(106, 140, 231,0.2) 0%, rgba(106, 140, 231,0.2) 14.286%,rgba(90, 125, 212,0.2) 14.286%, rgba(90, 125, 212,0.2) 28.572%,rgba(42, 81, 156,0.2) 28.572%, rgba(42, 81, 156,0.2) 42.858%,rgba(26, 67, 138,0.2) 42.858%, rgba(26, 67, 138,0.2) 57.144%,rgba(10, 52, 119,0.2) 57.144%, rgba(10, 52, 119,0.2) 71.43%,rgba(74, 111, 194,0.2) 71.43%, rgba(74, 111, 194,0.2) 85.716%,rgba(58, 96, 175,0.2) 85.716%, rgba(58, 96, 175,0.2) 100.002%),linear-gradient(135deg, rgba(106, 140, 231,0.2) 0%, rgba(106, 140, 231,0.2) 14.286%,rgba(90, 125, 212,0.2) 14.286%, rgba(90, 125, 212,0.2) 28.572%,rgba(42, 81, 156,0.2) 28.572%, rgba(42, 81, 156,0.2) 42.858%,rgba(26, 67, 138,0.2) 42.858%, rgba(26, 67, 138,0.2) 57.144%,rgba(10, 52, 119,0.2) 57.144%, rgba(10, 52, 119,0.2) 71.43%,rgba(74, 111, 194,0.2) 71.43%, rgba(74, 111, 194,0.2) 85.716%,rgba(58, 96, 175,0.2) 85.716%, rgba(58, 96, 175,0.2) 100.002%),linear-gradient(90deg, rgb(9, 9, 9),rgb(180, 180, 180));
+    display:grid;
+    place-items:center;
+}
+
+.card1{
+    background-color:gray;
+    background-size: cover !important; background: radial-gradient(ellipse at center, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.12) 20%, rgba(0,0,0,0.16) 100%), url("https://images.unsplash.com/photo-1504280539878-538b933c05b7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YmlydGhkYXklMjBkYXJrfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=60") no-repeat center center scroll; 
+    height:600px;
+    width:350px;
+    position:relative;
+    box-shadow:0 0 1vmin 1vmin #2225;
+    transform-style:preserve-3d;
+    perspective:600px;
+}
+.card1 .box{
+    position:absolute; 
+    top:0;
+    left:0;
+    height:100%;
+    width:100%;
+    background: rgba( 33, 52, 89, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    transform-origin:left;
+    transition:all 2s linear;
+    z-index:10;
+    /*display:none;*/
+    transform:rotateY(0deg);
+}
+.card1 .head{
+    padding:65px 0 10px 0;
+    width:100%;
+    background-color:#101528;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    height:300px;
+}
+.card1 .head h3{
+    font-family:"Permanent Marker", cursive;
+    color:#95A3C6;
+    letter-spacing:2px;
+    font-size:1.6rem;
+    text-align:center;
+    width:100%;
+    padding:15px 0;
+    background-color:#203459;
+}
+.card1 .head p{
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing:1.5px;
+    font-size:0.8rem;
+    color:#5A6173;
+    text-align:center;
+    margin-top:15px;
+    text-transform:uppercase ;
+    padding:10px 20px;
+    line-height:1.2rem;
+}
+.card1 .profile{
+    height:150px;
+    width:100%;
+    background-image:url("https://api.sololearn.com/Uploads/Avatars/17630862.jpg");
+    background-size:100% 100%;
+    opacity:0.7;
+}
+.card1 .button{
+    height:150px;
+    width:100%;
+    display:grid;
+    place-items:center;
+    font-weight:600;
+}
+.card1 .button .btn{
+    padding:25px;
+    background-color:#203459;
+    color:#95A3C6;
+    font-family: 'Montserrat', sans-serif;
+    text-transform:uppercase;
+    font-size:0.8rem;
+    letter-spacing:2.5px;
+    box-shadow:0 0px 0.5vmin 0.5vmin #ccc2;
+    transition:all 0.5s ease-in-out;
+}
+.card1 .button .btn:hover{
+    background:#95A3C6;
+    color:#101528;
+}
+.card1 .gift{
+    padding:15px;
+    border-radius:50%;
+    background:red;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    display:grid;
+    place-items:center;
+}
+.card1 .gift{
+    font-size:2.5rem;
+    background-color:#101528;
+    color:#95A3C6;
+    transition:all 0.5s ease-in-out;
+    opacity:0;
+}
+.card1 .gift:hover{
+    background-color:#203459;
+    color:#F59822;
+}
+.card1 .box2{
+    position:absolute; 
+    top:0;
+    left:0;
+    height:100%;
+    width:100%;
+    background: rgba( 33, 52, 89, 0.85 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    transform-origin:right;
+    transition:all 2s linear;
+    z-index:10;
+    transform:rotateY(-100deg); 
+    opacity:0;  
+}
+.card1 .box2 .wish{
+    height:90%;
+    width:90%;
+    opacity:1;
+    display:flex;
+    flex-direction:column;
+    padding:10px;
+    font-size:1rem;
+    font-family:"Permanent Marker", cursive;
+    color:#95A3C6;
+    text-align:center;
+    overflow:scroll;
+}
+.card1 .box2 .wish p{
+    text-align:center;
+}
+    </style>
+    <audio controls style=" display:none;" loop   id="a"  >
+ <source id="audio" src="https://www.dropbox.com/s/cwd9jno23fb9ds5/missyou.mp3?dl=1">
+    <script>
+     Swal.fire('Happy Birthday XYM🎊\n A small try🧗‍♀️ to express my gratitude🤗 \n It is quite simple😕 and boring😥 as I am a beginner😔')
+        </script> 
+        </audio> 
+        <main>
+            <div class="card1">
+                <div class="box" id="box">
+                <div class="profile"></div>
+                    <div class="head">
+                       <h3>HAPPY BIRTHDAY</h3>
+                       <p>To the most remarkable person i ever met..</p> 
+                    </div>
+                    <div class="button">
+                        <d8v class="btn" onclick="op()">OPEN</d8v>
+                    </div>
+                </div>
+                <div class="gift" id="gift">
+                    <i class="fas fa-gift" onclick="gift()"></i>
+                </div>
+                <div class="box2" id="box2">
+                    <div class="wish">
+                        <p>Genuinely speaking for me you are the best gift i ever got <br><br> Happy Birthday XYM. May all your wishes comes true and you have a never ending smile on your face forever.
+Wishing you a year ahead filled with happiness,  joy , prosperity and success. And yeah! Lots of maggi chocolate and ice cream too. <br><br> The bond with you is truly unique and special for me. You are the very first and last person to understand me so perfectly, a person who noticed the sadness behind my smile and anger behind my sarcasm XD. I really miss you a lot and to be very honest feel very incomplete without you here on sl and am waiting for you to return. But on a positive note feel very fortunate to get the golden opportunity to meet such an awesome and pure soul. Thank you for all those wonderful moments. Come back soon.Miss Youu....</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script>
+            function op(){
+    var b1 = document.getElementById("box");
+    b1.style.transform="rotateY(100deg)";
+    b1.style.borderRadius="0 2rem 2rem 0";   
+    var box2 = document.getElementById("box2");
+    var gift = document.getElementById("gift");
+    setTimeout(() => {
+        box2.style.opacity="1";
+        gift.style.opacity="1";  
+    },1000); 
+}
+function gift(){
+    var gift = document.getElementById("gift");
+    var box2 = document.getElementById("box2");
+    var b1 = document.getElementById("box");
+    setTimeout(() => {
+        gift.style.display="none";  
+        box2.style.transform="rotateY(0deg)";  
+        box.style.display="none";
+    },1000);
+}
+window.addEventListener("mouseover",play);
+window.addEventListener("click",play);
+function play() { document.getElementById("a").play();
+}
+
+        </script>
+    </body>
+</html>
